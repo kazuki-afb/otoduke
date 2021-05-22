@@ -1,0 +1,4 @@
+input#user_comment {
+  line-height: 6;
+  min-height: unset;
+}
