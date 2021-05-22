@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}<strong style="color:red; font-size:8px;">※必須</strong></label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<strong style="color:red; font-size:8px;">※</strong></label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<strong style="color:red; font-size:8px;">※</strong></label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -54,10 +54,24 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}<strong style="color:red; font-size:8px;">※</strong></label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="image_icon" class="col-md-4 col-form-label text-md-right">アイコンを選ぶ<strong style="color:blue; font-size:8px;">※任意</strong></label>
+
+                            <div class="col-md-6">
+                                <input id="image_icon" type="file" class="custom-file" name="image_icon" >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user_comment" class="col-md-4 col-form-label text-md-right">コメント<strong style="color:blue; font-size:8px;">※</strong></label>
+
+                            <div class="col-md-6">
+                                <textarea id="user_comment" type="text" class="form-control" rows="5" name="user_comment" ></textarea>
                             </div>
                         </div>
 
