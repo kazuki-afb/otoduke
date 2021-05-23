@@ -46,8 +46,15 @@ class User extends Authenticatable
 
     // public $timestamps = false;
     protected $primaryKey = "user_id";
+    // hasManyはここから
     public function posts()
     {
         return $this->hasMany('App\Models\Post');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+    // belongsToはここから
 }
