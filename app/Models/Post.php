@@ -16,6 +16,21 @@ class Post extends Model
     {
         return $this->hasMany('App\Models\Comment');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Models\Like');
+    }
+
+    public function preservations()
+    {
+        return $this->hasMany('App\Models\Preservation');
+    }
+//  belongsToMany
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
 //  berongsToはここから
     public function user()
     {
