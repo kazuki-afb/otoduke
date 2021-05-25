@@ -26,6 +26,26 @@ class Post extends Model
     {
         return $this->hasMany('App\Models\Preservation');
     }
+
+    public function musics()
+    {
+        return $this->hasMany('App\Models\Music');
+    }
+
+    public function movies()
+    {
+        return $this->hasMany('App\Models\Movie');
+    }
+
+    public function writes()
+    {
+        return $this->hasMany('App\Models\Write');
+    }
+
+    public function voices()
+    {
+        return $this->hasMany('App\Models\Voice');
+    }
 //  belongsToMany
     public function categories()
     {
