@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users',[UsersController::class, 'index']);
+Route::resource('users', UsersController::class);
 
 Route::get('hello',[HelloController::class, 'index']);
 
@@ -26,3 +26,5 @@ Route::get('hello',[HelloController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

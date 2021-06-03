@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-
-    protected $primaryKey = "category_id";
+    public $timestamps = false;
+    protected $primaryKey = "id";
     // hasMany
     // belongsToMany
     public function posts()

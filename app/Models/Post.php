@@ -9,8 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
-    // public $timestamps = false;
-    protected $primaryKey = "post_id";
+    public $timestamps = false;
+    protected $primaryKey = "id";
 //  hasManyはここから
     public function comments()
     {
