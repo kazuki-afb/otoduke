@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'image_icon',
         'user_comment',
+        'icon_path',
     ];
 
     /**
@@ -44,8 +45,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public $timestamps = false;
-    protected $primaryKey = "user_id";
+    public $timestamps = false;
+    protected $primaryKey = "id";
     // hasManyはここから
     public function posts()
     {
