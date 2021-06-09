@@ -17,8 +17,10 @@ class UsersController extends Controller
 
     public function show()
     {
+        $message = 'マイページ';
         $user = auth()->user();
         return view('user',[
+            'message' => $message,
             'id' => $user->id,
             'name' => $user->name,
             'comment' => $user->user_comment
