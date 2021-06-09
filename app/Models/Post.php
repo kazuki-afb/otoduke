@@ -10,6 +10,13 @@ class Post extends Model
     use HasFactory;
 
     public $timestamps = false;
+    protected $fillable = [
+        'title','comment','user_id'
+    ];
+    protected $variant =[
+        'music_date'
+    ];
+
     protected $primaryKey = "id";
 //  hasManyはここから
     public function comments()

@@ -36,7 +36,7 @@
                         @guest
                         @else
                             <li class="nav-item">
-                            <a class="nav-link" href="/">投稿</a>
+                            <a class="nav-link" href="{{ route('posts.create') }}">投稿</a>
                             </li>
                         @endguest
                         <li class="nav-item">

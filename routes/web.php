@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\HelloController;
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('users', UsersController::class);
+
+Route::resource('posts', PostController::class);
 
 Route::get('hello',[HelloController::class, 'index']);
 
