@@ -10,7 +10,7 @@ class Music extends Model
     use HasFactory;
     protected $table = 'musics';
     public $timestamps = false;
-    protected $fillable = [
+    protected $nullable = [
         'music_date','post_id',
     ];
     public function post()
