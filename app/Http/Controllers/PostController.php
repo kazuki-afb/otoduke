@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Music;
 use App\models\Movie;
+use App\models\Voice;
 use DB;
 
 class PostController extends Controller
@@ -26,12 +27,14 @@ class PostController extends Controller
         $title = 'タイトル';
         $comment = 'コメント';
         $movie = '動画';
+        $voice = '歌詞';
         return view('post',[
             'massege' => $massege,
             'music' => $music,
             'title' => $title,
             'comment' => $comment,
             'movie' => $movie,
+            'voice' => $voice,
         ]);
     }
 
@@ -42,7 +45,8 @@ class PostController extends Controller
             'title' => ['required','max:255'],
             'comment' => ['nullable','max:255'],
             'music_date' => ['nullable'],
-            'movie_date' => ['nullable']
+            'movie_date' => ['nullable'],
+            'voice_date' => ['nullable'],
         ]);
         
         $input = $request->except('submit');
