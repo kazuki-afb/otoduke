@@ -14,7 +14,7 @@ class Post extends Model
         'title','comment','user_id'
     ];
     protected $nullable =[
-        'music_date','movie_date'
+        'music_date','movie_date','voice_date',
     ];
 
     protected $primaryKey = "id";

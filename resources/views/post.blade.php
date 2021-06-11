@@ -52,13 +52,13 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<strong style="color:red; font-size:8px;">※</strong></label>
+                        <div class="form-group row">
+                            <label for="voice_date" class="col-md-4 col-form-label text-md-right">{{ $voice }}<strong style="color:red; font-size:8px;">※</strong></label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="voice_date" type="long" class="form-control @error('password') is-invalid @enderror" name="voice_date">
 
-                                @error('password')
+                                @error('$voice')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}<strong style="color:red; font-size:8px;">※</strong></label>
 
                             <div class="col-md-6">
