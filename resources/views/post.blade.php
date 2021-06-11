@@ -38,6 +38,20 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group row">
+                            <label for="movie_date" class="col-md-4 col-form-label text-md-right">{{ $movie}}<strong style="color:blue; font-size:8px;">※任意</strong></label>
+
+                            <div class="col-md-6">
+                                <input id="movie_date" type="file" class="custom-file"  name="movie_date">
+
+                                @error('movie')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <!-- <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<strong style="color:red; font-size:8px;">※</strong></label>
 

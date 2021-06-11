@@ -13,8 +13,8 @@ class Post extends Model
     protected $fillable = [
         'title','comment','user_id'
     ];
-    protected $variant =[
-        'music_date'
+    protected $nullable =[
+        'music_date','movie_date'
     ];
 
     protected $primaryKey = "id";
