@@ -23,6 +23,7 @@ class UsersController extends Controller
             'message' => $message,
             'id' => $user->id,
             'name' => $user->name,
+            'image_icon' => $user->image_icon,
             'comment' => $user->user_comment
         ]);
     }
