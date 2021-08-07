@@ -53,7 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'image_icon' => ['nullable','string','max:255'],
+            'image_icon' => ['required','image'],
             'user_comment' => ['nullable','string','max:255'],
         ]);
     }
@@ -66,10 +66,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $image_icon = request()->file('image_icon')->getClientOriginalName();
+        request()->file('image_icon')->storeAs('public/images',$image_icon);
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'image_icon' => $data['image_icon'],
+            'image_icon' => $image_icon,
             'user_comment' => $data['user_comment'],
             'password' => Hash::make($data['password']),
         ]);

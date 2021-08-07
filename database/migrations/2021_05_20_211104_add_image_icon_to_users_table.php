@@ -16,7 +16,7 @@ class AddImageIconToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->bigIncrements('id')->change();
-            $table->string('image_icon')->nullable()->create();
+            $table->string('image_icon')->after('name')->create();
             $table->string('user_comment')->nullable()->create();
         });
     }

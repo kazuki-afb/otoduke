@@ -7,7 +7,7 @@
             <div class="card">
               <div class="card-header">{{ $massege }}</div>
               <div class="card-body">
-                    <form method="POST" action="{{ route('posts.store') }}" >
+                    <form method="POST" action="/posts" >
                         @csrf
 
                         <div class="form-group row">

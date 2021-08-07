@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" >
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" >
                         @csrf
 
                         <div class="form-group row">
@@ -64,8 +64,13 @@
                             <label for="image_icon" class="col-md-4 col-form-label text-md-right">アイコンを選ぶ<strong style="color:blue; font-size:8px;">※任意</strong></label>
 
                             <div class="col-md-6">
-                                <input id="image_icon" type="file" class="custom-file" name="image_icon" >
+                                <input id="image_icon" type="file" class="@error('image_icon') is-invalid @enderror" name="image_icon" >
                             </div>
+                            @error('image_icon')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
                         <div class="form-group row">
                             <label for="user_comment" class="col-md-4 col-form-label text-md-right">コメント<strong style="color:blue; font-size:8px;">※</strong></label>

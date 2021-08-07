@@ -60,8 +60,8 @@ class PostController extends Controller
 
             if($input['music_date'] == null){
                 // dd($input['music_date']);
-                DB::commit();
-                return redirect()->route('posts.index');
+                // DB::commit();
+                // return redirect()->route('posts.index');
             }else{
                 $music = new Music();
                 $postId = $post->id;
@@ -70,16 +70,32 @@ class PostController extends Controller
                 $music->post_id = $postId;
                 $music->music_date = $postMusic;
                 $music->save();
+            }
 
+            if($input['movie_date'] == null){
+
+            }else{
                 $movie = new Movie();
+                $postId = $post->id;
                 $postMovie = $input['movie_date'];
                 $movie->post_id = $postId;
                 $movie->movie_date = $postMovie;
                 $movie->save();
+            }
+
+            if($input['voice_date'] == null){
+
+            }else{
+                $voice = new Voice();
+                $postId = $post->id;
+                $postVoice = $input['voice_date'];
+                $voice->post_id = $postId;
+                $voice->voice_date = $postVoice;
+                $voice->save();
+            }
 
                 DB::commit();
                 return redirect()->route('posts.index');
-            }
         } catch (Exception $e) {
             DB::rollBack();
             return redirect()->route('posts.create');
